@@ -11,5 +11,28 @@
       "StackId": "arn:aws:cloudformation:ap-northeast-1:330128716961:stack/amplify-client-dev-11035/25e328d0-1022-11ed-a3c3-0ec3f4c4d7c1",
       "AmplifyAppId": "d3gihvcizzp81t"
     }
+  },
+  "function": {
+    "clientFunc": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "api": {
+    "AmplifyFunction": {
+      "service": "API Gateway",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "clientFunc",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
+        }
+      ]
+    }
   }
 }
