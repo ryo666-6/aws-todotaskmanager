@@ -10,11 +10,13 @@ frontend:
   phases:
     build:
       commands: [
-        "cd client"
+        "cd client",
+        "npm install",
+        "npm run build-prod"
       ]
   artifacts:
     # IMPORTANT - Please verify your build output directory
-    baseDirectory: /
+    baseDirectory: amplify/client
     files:
       - '**/*'
   cache:
