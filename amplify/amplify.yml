@@ -9,7 +9,9 @@ backend:
 frontend:
   phases:
     build:
-      commands: []
+      commands: [
+        "cd client"
+      ]
   artifacts:
     # IMPORTANT - Please verify your build output directory
     baseDirectory: /
