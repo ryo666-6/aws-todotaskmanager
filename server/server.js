@@ -1,7 +1,14 @@
 const express = require('express')
 const cors = require('cors')
 const bodyParser = require('body-parser')
-const connection = require('./db')
+const mysql = require('mysql2')
+
+const connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: 'Ryo1998+6565',
+    database: 'todotaskmanager'
+})
 
 const app = express()
 
