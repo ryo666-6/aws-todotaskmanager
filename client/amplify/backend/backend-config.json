@@ -1,1 +1,9 @@
-{}
+{
+  "function": {
+    "envs": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  }
+}

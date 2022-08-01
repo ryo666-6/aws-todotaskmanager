@@ -19,7 +19,7 @@ class TaskList extends React.Component {
     }
 
     getTaskList = () => {
-        axios.get('http://localhost:4000/tasks')
+        axios.get('http://localhost:3000/tasks')
             .then((response) => response.data)
             .then((response) => {
                 this.setState({taskList: response})
@@ -27,12 +27,12 @@ class TaskList extends React.Component {
     }
 
     onDeleteClick = (taskid) => {
-        axios.delete(`http://localhost:4000/deleteTask/${taskid}`)
+        axios.delete(`http://localhost:3000/deleteTask/${taskid}`)
         this.getTaskList()
     }
 
     onSubmitClick = () => {
-        axios.post('http://localhost:4000/addTask', {
+        axios.post('http://localhost:3000/addTask', {
             task: this.state.task
         })
         this.getTaskList()
