@@ -3,6 +3,7 @@ import axios from 'axios'
 import '../styles/TaskList.css'
 import DeleteIcon from '@mui/icons-material/Delete';
 import { Button } from '@mui/material';
+import { API_URL } from '../config/environment';
 
 class TaskList extends React.Component {
     state = {
@@ -19,7 +20,7 @@ class TaskList extends React.Component {
     }
 
     getTaskList = () => {
-        axios.get('http://localhost:3000/tasks')
+        axios.get('stripeapi',API_URL+'/tasks')
             .then((response) => response.data)
             .then((response) => {
                 this.setState({taskList: response})
@@ -27,12 +28,12 @@ class TaskList extends React.Component {
     }
 
     onDeleteClick = (taskid) => {
-        axios.delete(`http://localhost:3000/deleteTask/${taskid}`)
+        axios.delete(API_URL+`/deleteTask/${taskid}`)
         this.getTaskList()
     }
 
     onSubmitClick = () => {
-        axios.post('http://localhost:3000/addTask', {
+        axios.post(API_URL+'/addTask', {
             task: this.state.task
         })
         this.getTaskList()

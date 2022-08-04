@@ -6,9 +6,6 @@ or in the "license" file accompanying this file. This file is distributed on an 
 See the License for the specific language governing permissions and limitations under the License.
 */
 
-
-
-
 const express = require('express')
 const bodyParser = require('body-parser')
 const awsServerlessExpressMiddleware = require('aws-serverless-express/middleware')
@@ -38,7 +35,7 @@ app.use(function(req, res, next) {
  * Example get method *
  **********************/
 
-app.get('/tasks', (req, res) => {
+app.get('/todos', (req, res) => {
   const TASK_QUERY = "select * from awstaskmanager.tasks"
   connection.query(TASK_QUERY, (err, response) => {
       if (err) console.log(err);
@@ -50,7 +47,7 @@ app.get('/tasks', (req, res) => {
 * Example post method *
 ****************************/
 
-app.post('/addTask', (req, res) => {
+app.post('addTask', (req, res) => {
   const ADD_QUERY = `insert into awstaskmanager.tasks (task) values ('${req.body.task}')`
   connection.query(ADD_QUERY, (err) => {
       if (err) console.log(err);
@@ -67,7 +64,7 @@ app.post('/addTask', (req, res) => {
 * Example delete method *
 ****************************/
 
-app.delete('/deleteTask/:taskid', (req, res) => {
+app.delete('deleteTask/:taskid', (req, res) => {
   console.log(req.params.taskid);
   const DELETE_QUERY = `DELETE FROM awstaskmanager.tasks where (taskid=${req.params.taskid})`
   connection.query(DELETE_QUERY, (err, res) => {

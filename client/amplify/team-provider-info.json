@@ -15,7 +15,7 @@
       "function": {
         "envs": {
           "deploymentBucketName": "amplify-amplifyapp-dev-93720-deployment",
-          "s3Key": "amplify-builds/envs-456778714c576e4c7351-build.zip"
+          "s3Key": "amplify-builds/envs-774a7462362b34486448-build.zip"
         }
       }
     }
