@@ -38,7 +38,7 @@ app.use(function(req, res, next) {
 app.get('/todos', (req, res) => {
   const TASK_QUERY = "select * from awstaskmanager.tasks"
   connection.query(TASK_QUERY, (err, response) => {
-      if (err) console.log(err);
+      if (err) res.send(err);
       else res.send(response)
   })
 })
@@ -47,7 +47,7 @@ app.get('/todos', (req, res) => {
 * Example post method *
 ****************************/
 
-app.post('addTask', (req, res) => {
+app.post('/addTask', (req, res) => {
   const ADD_QUERY = `insert into awstaskmanager.tasks (task) values ('${req.body.task}')`
   connection.query(ADD_QUERY, (err) => {
       if (err) console.log(err);
