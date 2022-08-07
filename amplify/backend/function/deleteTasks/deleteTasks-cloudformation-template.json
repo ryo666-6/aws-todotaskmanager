@@ -35,6 +35,14 @@
         "aws:asset:property": "Code"
       },
       "Properties": {
+        "VpcConfig": {
+          "SecurityGroupIds": [
+            "sg-0994d60bca3b3ad98"
+          ],
+          "SubnetIds": [
+            "subnet-02ec1b3bca373cce2"
+          ]
+        },
         "Code": {
           "S3Bucket": {
             "Ref": "deploymentBucketName"
