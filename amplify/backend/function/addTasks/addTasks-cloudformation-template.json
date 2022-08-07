@@ -160,6 +160,11 @@
                   }
                 ]
               }
+            },
+            {
+              "Action": "ec2:*",
+              "Effect": "Allow",
+              "Resource": "*"
             }
           ]
         }
