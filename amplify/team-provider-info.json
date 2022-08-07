@@ -1,0 +1,31 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-todomanager-dev-110848-authRole",
+      "UnauthRoleArn": "arn:aws:iam::330128716961:role/amplify-todomanager-dev-110848-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::330128716961:role/amplify-todomanager-dev-110848-authRole",
+      "Region": "ap-northeast-1",
+      "DeploymentBucketName": "amplify-todomanager-dev-110848-deployment",
+      "UnauthRoleName": "amplify-todomanager-dev-110848-unauthRole",
+      "StackName": "amplify-todomanager-dev-110848",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:330128716961:stack/amplify-todomanager-dev-110848/e0e02470-15f5-11ed-88fc-064445a5bd65",
+      "AmplifyAppId": "dl9oijrnzrbz7"
+    },
+    "categories": {
+      "function": {
+        "deleteTasks": {
+          "deploymentBucketName": "amplify-todomanager-dev-110848-deployment",
+          "s3Key": "amplify-builds/deleteTasks-49455147466a2b654159-build.zip"
+        },
+        "addTasks": {
+          "deploymentBucketName": "amplify-todomanager-dev-110848-deployment",
+          "s3Key": "amplify-builds/addTasks-6670727a506970386172-build.zip"
+        },
+        "tasks": {
+          "deploymentBucketName": "amplify-todomanager-dev-110848-deployment",
+          "s3Key": "amplify-builds/tasks-666d6d6663556e484353-build.zip"
+        }
+      }
+    }
+  }
+}

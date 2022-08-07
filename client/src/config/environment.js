@@ -1,1 +1,0 @@
-export const API_URL = 'https://yg21ggdaje.execute-api.ap-northeast-1.amazonaws.com/dev'
