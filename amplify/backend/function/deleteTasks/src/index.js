@@ -17,8 +17,21 @@ const response = {
 };
 
 
-exports.handler = async (event, context, callback) => {
-    const sql = `DELETE FROM taskmanager.tasks where taskid = 3;`;
+// exports.handler = async (event, context, callback) => {
+//     const sql = `DELETE FROM taskmanager.tasks where taskid = 3;`;
+//     connection.query(sql, function(err, result) {
+//     if (err) {
+//         console.log(err);
+//         return err;
+//     }
+//     response['body'] = JSON.stringify(result)
+//     callback(null, response);
+//     });
+//     connection.end();
+// };
+
+exports.handler = (':/taskid', (req, callback) => {
+    const sql = `DELETE FROM taskmanager.tasks where taskid;` + req.params.id;
     connection.query(sql, function(err, result) {
     if (err) {
         console.log(err);
@@ -28,5 +41,5 @@ exports.handler = async (event, context, callback) => {
     callback(null, response);
     });
     connection.end();
-};
+});
 
