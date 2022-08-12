@@ -93,13 +93,13 @@ class TaskList extends React.Component {
     }
 
     getTaskList() {
-      axios.get(API_URL + '/tasks')
-        .then(res => {
-          console.log(res.data);
-          this.setState({ taskList: res.data, loading: false })
-        })
+        axios.get(API_URL + '/tasks')
+            .then(res => {
+            console.log(res.data);
+            this.setState({ taskList: res.data, loading: false })
+            })
         .catch(err => {
-          console.error(err);
+            console.error(err);
         }
     )}
 
