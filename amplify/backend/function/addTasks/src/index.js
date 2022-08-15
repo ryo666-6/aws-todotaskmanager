@@ -17,7 +17,7 @@ const response = {
 };
 
 exports.handler = (event, context, callback) => {
-    const sql = 'insert into taskmanager.tasks SET ?;'
+    const sql = 'INSERT INTO taskmanager.tasks SET ?;'
     let post = {};
     post['taskid'] = event["queryStringParameters"]["taskid"];
     post['task'] = event["queryStringParameters"]["task"];
