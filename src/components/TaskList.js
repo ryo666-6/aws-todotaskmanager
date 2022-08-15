@@ -103,12 +103,12 @@ class TaskList extends React.Component {
     )}
 
     onDeleteClick = (taskid) => {
-        axios.delete(API_URL+`/deleteTask/${taskid}`)
+        axios.delete(API_URL+`/deleteTasks/${taskid}`)
         this.getTaskList()
     }
 
-    onSubmitClick() {
-        axios.post(API_URL+'/addTasks', {
+    onSubmitClick = () => {
+        axios.post(API_URL + '/addTasks', {
             task: this.state.task
         })
         this.getTaskList()
