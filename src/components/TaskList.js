@@ -84,9 +84,9 @@ class TaskList extends React.Component {
         taskList: []
     }
 
-    componentDidMount() {
-        this.getTaskList();
-    }
+    // componentDidMount() {
+    //     this.getTaskList();
+    // }
 
     componentDidUpdate(task) {
         this.getTaskList(task)
