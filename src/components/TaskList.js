@@ -92,7 +92,7 @@ class TaskList extends React.Component {
         this.getTaskList(task)
     }
 
-    getTaskList = () => {
+    getTaskList() {
         axios.get(API_URL + '/tasks')
             .then(res => {
             this.setState({ taskList: res.data, loading: false })
@@ -107,7 +107,7 @@ class TaskList extends React.Component {
         this.getTaskList()
     }
 
-    onSubmitClick = () => {
+    onSubmitClick = (task) => {
         axios.post(API_URL + '/addTasks', {
             task: this.state.task
         })
