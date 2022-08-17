@@ -107,10 +107,11 @@ class TaskList extends React.Component {
         this.getTaskList()
     }
 
-    onSubmitClick = (task) => {
+    onSubmitClick = () => {
         axios.post(API_URL + '/addTasks', {
             task: this.state.task
         })
+        console.log(this.state.task);
         this.getTaskList()
         this.setState({task: ''})
     }
