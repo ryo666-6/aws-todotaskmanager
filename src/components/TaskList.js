@@ -88,10 +88,6 @@ class TaskList extends React.Component {
         this.getTaskList();
     }
 
-    componentDidUpdate() {
-        this.getTaskList()
-    }
-
     getTaskList() {
         axios.get(API_URL + '/tasks')
             .then(res => {
