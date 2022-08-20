@@ -88,8 +88,8 @@ class TaskList extends React.Component {
         this.getTaskList();
     }
 
-    componentDidUpdate(task) {
-        this.getTaskList(task)
+    componentDidUpdate() {
+        this.getTaskList()
     }
 
     getTaskList() {
@@ -112,7 +112,7 @@ class TaskList extends React.Component {
             task: this.state.task
         })
         .then(() => {
-            this.getTaskList(task)
+            this.getTaskList()
         })
             .catch(err => {
             console.log(err);
