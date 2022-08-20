@@ -77,12 +77,12 @@ import { API_URL } from '../config/environment';
 
 // export default TaskList
 
-
 class TaskList extends React.Component {
     state = {
         task: '',
         taskList: []
     }
+
 
     componentDidMount() {
         this.getTaskList();
@@ -98,13 +98,13 @@ class TaskList extends React.Component {
         }
     )}
 
-    onDeleteClick = (taskid) => {
-        axios.delete(API_URL+`/deleteTasks/${taskid}`)
-        this.getTaskList()
+    onDeleteClick = async (taskid) => {
+        axios.delete(API_URL + `/deleteTasks/${taskid}`)
+        await new Promise(resolve => setTimeout(resolve, 3000));
     }
 
     onSubmitClick = (task) => {
-        axios.post(API_URL + '/addTasks', {
+        axios.get(API_URL + '/addTasks', {
             task: this.state.task
         })
         .then(() => {
