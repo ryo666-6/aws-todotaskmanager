@@ -18,9 +18,9 @@ const response = {
 
 exports.handler = (event, context, callback) => {
     const sql = 'insert into taskmanager.tasks SET ?;'
-    var post = { task:''};
-    post['task'] = event["queryStringParameters"]["task"];
-    
+    let post = {};
+    post = JSON.parse(event["body"]);
+    console.log(post['task'])
     connection.query(sql,post, function(err, result) {
     if (err) {
         console.log(err);
