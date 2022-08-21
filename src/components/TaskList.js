@@ -5,6 +5,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import { Button } from '@mui/material';
 import { API_URL } from '../config/environment';
 
+
 class TaskList extends React.Component {
     state = {
         task: '',
@@ -31,7 +32,7 @@ class TaskList extends React.Component {
         this.getTaskList()
     }
 
-    onSubmitClick = async () => {
+    onSubmitClick = () => {
         axios.post(API_URL + '/addTasks', {
             task: this.state.task
         })
