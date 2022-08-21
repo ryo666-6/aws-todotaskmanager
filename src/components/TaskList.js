@@ -35,12 +35,7 @@ class TaskList extends React.Component {
         axios.post(API_URL + '/addTasks', {
             task: this.state.task
         })
-        .then(() => {
-            this.getTaskList()
-        })
-            .catch(err => {
-            console.log(err);
-        })
+        this.getTaskList()
         this.setState({task: ''})
     }
 
