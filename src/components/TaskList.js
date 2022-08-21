@@ -25,7 +25,8 @@ class TaskList extends React.Component {
         }
     )}
 
-    onDeleteClick = (taskid) => {
+    onDeleteClick = async (taskid) => {
+        await new Promise(resolve => setTimeout(resolve, 1000));
         axios.delete(API_URL + `/deleteTasks/${taskid}`)
         this.getTaskList()
     }
