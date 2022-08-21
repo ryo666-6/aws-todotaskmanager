@@ -35,8 +35,7 @@ class TaskList extends React.Component {
         axios.post(API_URL + '/addTasks', {
             task: this.state.task
         })
-        await new Promise(resolve => setTimeout(resolve, 1000));
-        this.getTaskList()
+        this.componentDidUpdate(this.getTaskList())
         this.setState({task: ''})
     }
 
