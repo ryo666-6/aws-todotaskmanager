@@ -37,7 +37,7 @@ class TaskList extends React.Component {
             task: this.state.task
         })
         this.setState({ task: '' })
-        // await new Promise(resolve => setTimeout(resolve, 1000));
+        await new Promise(resolve => setTimeout(resolve, 1000));
         this.componentDidMount();
     }
 
