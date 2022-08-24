@@ -16,6 +16,10 @@ class TaskList extends React.Component {
         this.getTaskList();
     }
 
+    componentDidUpdate() {
+        this.getTaskList()
+    }
+
     getTaskList = () => {
         axios.get(API_URL + '/tasks')
             .then(res => {
@@ -29,7 +33,7 @@ class TaskList extends React.Component {
     onDeleteClick = async (taskid) => {
         axios.delete(API_URL + `/deleteTasks/${taskid}`)
         await new Promise(resolve => setTimeout(resolve, 1000));
-        this.componentDidMount();
+        this.componentDidUpdate();
     }
 
     onSubmitClick = async () => {
