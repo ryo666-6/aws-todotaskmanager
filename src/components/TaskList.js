@@ -24,7 +24,6 @@ class TaskList extends React.Component {
         axios.get(API_URL + '/tasks')
             .then(res => {
                 this.setState({ taskList: res.data })
-                console.log(res.data);
             })
         .catch(err => {
             console.error(err);
